@@ -1,0 +1,8 @@
+void main() { 
+  List<int> fib = [];
+   for(int temp, i = 0, j = 1; j<4000000; temp = i, i = j, j = i + temp) { 
+     if(j%2==0){fib.add(j);}
+   }
+  var sum = fib.reduce((a, b) => a + b);
+  print(sum);
+} 
