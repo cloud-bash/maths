@@ -1,0 +1,49 @@
+void main() {
+  List palindromes = [];
+  for (int x = 900009; x <= 997799; x++) {
+    if (palindromeCheck(x) == true) {
+      palindromes.add(x);
+    }
+  }
+  for (int i = 0; i < palindromes.length; i++) {
+    var p = get3DigitFactors(palindromes[i]);
+    if (p.length != 0) {
+      var answer = p[0] * p[1];
+      print(answer);
+    }
+  }
+}
+
+List get3DigitFactors(n) {
+  List factors = [];
+  double B = 100;
+
+  while (n > B) {
+    if (n % B == 0) {
+      if (B < 1000 && (n / B) < 1000) {
+        factors.add(B);
+      }
+      B++;
+    } else {
+      B++;
+    }
+  }
+  return factors;
+}
+
+bool palindromeCheck(int x) {
+  int remainder, reversed = 0, original;
+  original = x;
+  // a loop to reverse a number
+  while (x > 0) {
+    remainder = x % 10; //get remainder
+    reversed = (reversed * 10) + remainder;
+    x = x ~/ 10;
+  }
+
+  if (reversed == original) {
+    return true;
+  } else {
+    return false;
+  }
+}
