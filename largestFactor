@@ -1,0 +1,13 @@
+void main(){
+  double A = 600851475143;
+  double B = 2;
+  while(A>B){
+    if(A%B==0){
+      A = A/B;
+      B = 2;
+    } else {
+      B++;
+    }
+  }
+  print(A);
+}
