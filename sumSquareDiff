@@ -1,0 +1,15 @@
+void main() {
+  List n = [];
+  int sumOfSquares = 0;
+  int sum = 0;
+  int sumSquared = 0;
+  int answer = 0;
+  for (int i = 1; i <= 100; i++) {
+  n.add(i);
+    sum = sum + i;
+    sumSquared = sum*sum;
+    sumOfSquares = sumOfSquares + i*i;
+    answer = sumSquared - sumOfSquares;
+}
+  print(answer);
+}
