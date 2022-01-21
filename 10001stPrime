@@ -1,0 +1,27 @@
+void main() {
+  
+  bool checkPrime(x) {
+    int start = 1;
+    int end = x;
+    int factors = 0;
+    for(start; start <= end; start++){
+      if(end%start==0){
+        factors++;
+      }
+    }
+    if(factors<=2){
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  List primes = [];
+  for(int i=2;primes.length<10001;i++){
+    if(checkPrime(i)==true){
+      primes.add(i);
+    }
+  }
+  print(primes[10000]);
+ 
+}
