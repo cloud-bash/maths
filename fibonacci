@@ -1,0 +1,14 @@
+void main() {
+  int x = 0;
+  List<int> f = [];
+  while (x < 1000000) {
+    f.add(x);
+    if (x == 0) {
+      x++;
+      f.add(x);
+    } else {
+      x = x + f[f.length - 2];
+    }
+  }
+  print(f);
+}
