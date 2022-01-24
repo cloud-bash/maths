@@ -1,0 +1,31 @@
+void main() {
+
+  List<List> getFactors(twoST) {
+    List<List> factorPairs = [];
+    num n = twoST;
+    if (twoST % 1 == 0) {
+      for (num i = n; i > 0; i--) {
+        num d = n / i;
+        if (n % i == 0 && i >= d) {
+          factorPairs.add([i, d]);
+        }
+      }
+    }
+    return (factorPairs);
+  }
+
+  for (int r = 1; r < 200; r++) {
+    List<List> pairs = [];
+    num twoST = (r * r) / 2;
+    pairs = getFactors(twoST);
+    for(int x = 0; x < pairs.length; x++){
+      num s = pairs[x][0];
+      num t = pairs[x][1];
+      num a = r + t;
+      num b = r + s;
+      num c = r + s + t;
+      print('$a, $b, $c');
+      print(a + b + c);
+    }
+  }
+}
